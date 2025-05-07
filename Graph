@@ -1,0 +1,28 @@
+#include<stdio.h>
+int MAX = 5;
+void insertedge(int graph[MAX][MAX], int u, int v){
+    graph[u][v] = 1;
+    graph[v][u] = 1;
+}
+void printgraph(int graph[MAX][MAX]){
+    printf("Adjanceny Matrix: ");
+    for(int u=0;u<MAX;u++){
+        for(int v=0;v<MAX;v++){
+            printf("%d", graph[u][v]);
+        }
+        printf("\n");
+    }
+}
+int main(){
+    int graph[MAX][MAX];
+    
+    insertedge(graph, 0,1);
+    insertedge(graph, 0,2);
+    insertedge(graph, 1,2);
+    insertedge(graph, 2,0);
+    insertedge(graph, 2,3);
+    
+    printgraph(graph);
+    
+    return 0;
+}
